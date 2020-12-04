@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robot" content="index, follow" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Scissors Rock Paper</title>
+</head>
+
+<body>
+  <!--Header-->
+  <div class="header">
+    <h1>Rock, Scissors, Paper</h1>
+  </div>
+
+  <main>
+    <!--Top half of the page-->
+    <div class="container-top">
+      <div class="picture-container">
+        <img id="computerHand" src="./img/rock.png" alt="" />
+      </div>
+    </div>
+
+    <div class="counter-container">
+      <div>
+        <h2>Rounds</h2>
+        <h2 class="round-counter counter">0</h2>
+      </div>
+      <div>
+        <h2 class="">Computer</h2>
+        <h2 class="counter-computer counter">0</h2>
+      </div>
+      <div>
+        <h2 class="">Player</h2>
+        <h2 class="counter-player counter">0</h2>
+      </div>
+    </div>
+
+    <div class="announcement">
+      <h2 class="winnerOutput">Player vs Computer</h2>
+    </div>
+
+    <!--Bottom half of the page-->
+    <div class="container-bottom">
+      <section class="button-section">
+        <button id="scissorsBtn">
+          <div class="btnContainer">
+            <div class="imgContainer">
+              <img src="./img/scissors.png" alt="A hand makes a scissors symbol." />
+            </div>
+            <h2>Scissors</h2>
+          </div>
+        </button>
+
+        <button id="rockBtn">
+          <div class="btnContainer">
+            <div class="imgContainer">
+              <img src="./img/rock.png" alt="A hand making a fist aka a rock symbol." />
+            </div>
+            <h2>Rock</h2>
+          </div>
+        </button>
+
+        <button id="paperBtn">
+          <div class="btnContainer">
+            <div class="imgContainer">
+              <img src="./img/paper.png" alt="A flat hand, which means paper." />
+            </div>
+            <h2>Paper</h2>
+          </div>
+        </button>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <select class="language-selection">
+      <option value="eng">English</option>
+      <option value="ger">Deutsch</option>
+    </select>
+
+  </footer>
+  <div class="overlay"></div>
+  <script src="./app.js"></script>
+</body>
+
+</html>

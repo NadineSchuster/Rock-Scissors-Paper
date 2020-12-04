@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<languagesList>
+    <english title="Rock, Scissors, Paper">
+        <rounds name="Rounds">
+            <pc>Computer</pc>
+            <player>Player</player>
+        </rounds>
+
+        <btns>
+            <scissors>Scissors</scissors>
+            <rock>Rock</rock>
+            <paper>Paper</paper>
+        </btns>
+
+        <announcements>
+            <bothWin>Scissors vs Scissors - both ... win?</bothWin>
+            <rockVSrock>Rock vs Rock!</rockVSrock>
+            <paperVSpaper>Paper vs Paper!</paperVSpaper>
+            <playerWon>You won!</playerWon>
+            <compuWon>The Computer won!</compuWon>
+        </announcements>        
+    </english>
+
+    <german title="Schere, Stein, Papier">
+        <rounds name="Runden">
+            <pc>Computer</pc>
+            <player>Spieler</player>
+        </rounds>
+
+        <btns>
+            <scissors>Schere</scissors>
+            <rock>Stein</rock>
+            <paper>Papier</paper>
+        </btns>
+
+        <announcements>
+            <scissorsVSscissors>Schere gegen Schere - unentschieden!</scissorsVSscissors>
+            <rockVSrock>Stein gegen Stein - unentschieden!</rockVSrock>
+            <paperVSpaper>Papier gegen Papier - unentschieden!</paperVSpaper>
+            <playerWon>Du gewinnst!</playerWon>
+            <compuWon>Der Computer gewinnt!</compuWon>
+        </announcements>        
+    </german>
+</languagesList>

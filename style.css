@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+main {
+  margin: 3vh 0vh;
+  height: 100vh - 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* computer hand image */
+.container-top {
+  height: 40vh;
+}
+
+.container-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.picture-container {
+  display: flex;
+
+  height: 100%;
+  width: 40vh;
+}
+
+/* Announcement */
+.announcement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  width: 90%;
+  margin: 3vh auto;
+}
+
+/* Counter */
+.counter-container {
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-container div {
+  padding: 2vw 4vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.counter {
+  padding: 0vw 1vw;
+}
+
+/* Buttons */
+.container-bottom {
+  height: auto;
+  width: 90%;
+  margin: 2vh auto;
+}
+
+.button-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-section button {
+  height: 20vh;
+  width: 20vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button-section button:focus {
+  border: solid 4px rgb(161, 11, 69);
+}
+
+#rockBtn {
+  margin: 0vw 5vw;
+}
+
+.imgContainer {
+  width: 15vh;
+  height: 15vh;
+}
+
+.button-section button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Footer */
+footer {
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+footer a {
+  margin-right: 2vw;
+  cursor: pointer;
+}
+
+footer select {
+  margin-left: 2vw;
+  border-radius: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 712px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+
+  .counter-container {
+    right: 0%;
+    top: 0%;
+  }
+
+  .counter-container h2 {
+    font-size: 1rem;
+  }
+
+  .button-section button {
+    height: 10vh;
+    width: 10vh;
+  }
+
+  .container-top {
+    height: 64vh;
+  }
+
+  .imgContainer {
+    width: 5vh;
+    height: 5vh;
+  }
+
+  .btnContainer h2 {
+    font-size: 0.7rem;
+  }
+}
