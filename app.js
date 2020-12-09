@@ -11,11 +11,20 @@ let languageSelection = document.querySelector(".language-selection");
 let userChoice;
 const min = 1;
 const max = 3;
+let language;
 
 let request = new XMLHttpRequest();
 let xml;
 
-/*
+function checkLanguage(){
+  console.log("Changed!");
+  // languageSelection => value/index
+  console.log(languageSelection.value); // value = ger || eng
+  language = languageSelection.value;
+}
+
+languageSelection.addEventListener("click", checkLanguage);
+
 request.onload = () => {
   if (request.status == 200) {
     xml = request.responseXML;
@@ -24,10 +33,6 @@ request.onload = () => {
     console.log("Problem with server");
   }
 };
-
-// languageSelection => value/index
-*/
-
 
 // Add Event Listener
 scissorsBtn.addEventListener("click", chooseScissors);
@@ -76,57 +81,105 @@ function compareChoices(computerChoice, userChoice) {
   roundCounter.innerText++;
 
   if (computerChoice === "Scissors" && userChoice === "Scissors") {
-    // winnerOutput.innerText = "Scissors vs Scissors - unentschieden!";
-    winnerOutput.innerText = "Scissors vs Scissors - both ... win?";
+    
+    if(language === "eng"){
+      winnerOutput.innerText = "Scissors vs Scissors - both ... win?";
+    } else if(language === "ger"){
+      winnerOutput.innerText = "Scissors vs Scissors - unentschieden!";
+    }
+    
     playerWins.innerText++;
     computerWins.innerText++;
     compuHand.src = "img/scissors.png";
+
   } else if (computerChoice === "Scissors" && userChoice === "Rock") {
-    //winnerOutput.innerText = "Du gewinnst gegen den Computer: Rock gewinnt gegen Scissors!";
-    winnerOutput.innerText = "You won!";
+    
+    if(language === "eng"){
+      winnerOutput.innerText = "You won!";
+    } else if(language === "ger"){
+      winnerOutput.innerText = "Du gewinnst!";
+    }
+
     compuHand.src = "img/scissors.png";
     playerWins.innerText++;
+
   } else if (computerChoice === "Scissors" && userChoice === "Paper") {
-    //winnerOutput.innerText = "Der Computer gewinnt: Scissors gewinnt gegen Paper!";
-    winnerOutput.innerText = "The Computer won!";
+
+    if(language === "eng"){
+      winnerOutput.innerText = "The Computer won!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Der Computer gewinnt: Scissors gewinnt gegen Paper!";
+    }
+   
     compuHand.src = "img/scissors.png";
     computerWins.innerText++;
   }
 
   if (computerChoice === "Rock" && userChoice === "Rock") {
-    //winnerOutput.innerText = "Rock vs Rock - unentschieden!";
-    winnerOutput.innerText = "Rock vs Rock!";
+
+    if(language === "eng"){
+       winnerOutput.innerText = "Rock vs Rock!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Rock vs Rock - unentschieden!";
+    }
+
     compuHand.src = "img/rock.png";
   } else if (computerChoice === "Rock" && userChoice === "Scissors") {
-    //winnerOutput.innerText = "The Computer won: Rock gewinnt gegen Scissors!";
-    winnerOutput.innerText = "The Computer won!";
+
+    if(language === "eng"){
+       winnerOutput.innerText = "The Computer won!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Der Computer gewinnt: Rock gewinnt gegen Scissors!";
+    }
+    
     compuHand.src = "img/rock.png";
     computerWins.innerText++;
+
   } else if (computerChoice === "Rock" && userChoice === "Paper") {
-    //winnerOutput.innerText = "Du gewinnst: Paper gewinnt gegen Rock!";
-    winnerOutput.innerText = "You won!";
+
+    if(language === "eng"){
+       winnerOutput.innerText = "You won!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Du gewinnst: Paper gewinnt gegen Rock!";
+    }
+    
     compuHand.src = "img/rock.png";
     playerWins.innerText++;
   }
 
   if (computerChoice === "Paper" && userChoice === "Paper") {
-    //winnerOutput.innerText = "Paper vs Paper - unentschieden!";
-    winnerOutput.innerText = "Paper vs Paper!";
+
+    if(language === "eng"){
+       winnerOutput.innerText = "Paper vs Paper!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Paper vs Paper - unentschieden!";
+    }
     compuHand.src = "img/paper.png";
+
   } else if (computerChoice === "Paper" && userChoice === "Rock") {
-    //winnerOutput.innerText = "The Computer won: Paper wins vs Rock!";
-    winnerOutput.innerText = "The Computer won!";
+
+    if(language === "eng"){
+       winnerOutput.innerText = "The Computer won!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Der Computer gewinnt!";
+    }
     compuHand.src = "img/paper.png";
     computerWins.innerText++;
+
   } else if (computerChoice === "Paper" && userChoice === "Scissors") {
-    //winnerOutput.innerText = "You won: Scissors wins vs Paper!";
-    winnerOutput.innerText = "You won!";
+
+    if(language === "eng"){
+       winnerOutput.innerText = "You won: Scissors wins vs Paper!";
+    } else if(language === "ger"){
+       winnerOutput.innerText = "Du gewinnst: Schere gewinnt gegen Papier!";
+    }
+
     compuHand.src = "img/paper.png";
     playerWins.innerText++;
   }
 }
 
-/* request.open("GET", "./lang/lang.xml");
+request.open("GET", "./lang/lang.xml");
 request.responseType = "document";
 request.setRequestHeader("Accept", "text/xml");
-request.send(); */
+request.send();
