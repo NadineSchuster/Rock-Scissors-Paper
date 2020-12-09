@@ -120,21 +120,17 @@ main {
 
 /* Footer */
 footer {
-  height: 5vh;
+  width: 100%;
+  padding-top: 4rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   font-size: 1rem;
 }
 
-footer a {
-  margin-right: 2vw;
-  cursor: pointer;
-}
-
 footer select {
-  margin-left: 2vw;
   border-radius: 10px;
+  margin-bottom: 4vh;
 }
 
 /* Media Queries */

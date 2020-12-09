@@ -182,36 +182,39 @@ function compareChoices(computerChoice, userChoice) {
 }
 
 let selectLanguage = function(){
+  let tabName = document.querySelector('head title');
   let header = document.querySelector('.header h1');
   let announcement = document.querySelector('.winnerOutput');
   let scissorsBtn = document.querySelector('#scissorsBtn h2');
   let rockBtn = document.querySelector('#rockBtn h2');
   let paperBtn = document.querySelector('#paperBtn h2');
-  let rounds = document.querySelector('.round-counter');
-  let computerCounter = document.querySelector('.counter-computer');
-  let playerCounter = document.querySelector('.counter-player');
+  let rounds = document.querySelector('.counter-all');
+  let computerCounter = document.querySelector('.counter-c');
+  let playerCounter = document.querySelector('.counter-p');
 
   let englishXml = xml.querySelector('english');
   let germanXml = xml.querySelector('german');
 
-  if(language === "eng"){    
+  if(language === "eng"){
+    tabName.textContent = englishXml.getAttribute('title');
     header.textContent = englishXml.getAttribute('title');
     announcement.textContent = "Player vs Computer";
     scissorsBtn.textContent = englishXml.querySelector('scissors').textContent;
     rockBtn.textContent = englishXml.querySelector('rock').textContent;
     paperBtn.textContent = englishXml.querySelector('paper').textContent;
-    rounds.textContent = englishXml.getAttribute('name');
-    // computerCounter.textContent = englishXml.querySelector('pc').textContent;
-    // playerCounter.textContent = englishXml.querySelector('player').textContent;
+    rounds.textContent = englishXml.querySelector('name').textContent;
+    computerCounter.textContent = englishXml.querySelector('pc').textContent;
+    playerCounter.textContent = englishXml.querySelector('player').textContent;
   } else if (language === "ger"){
+    tabName.textContent = germanXml.getAttribute('title');
     header.textContent = germanXml.getAttribute('title');
     announcement.textContent = "Spieler vs Computer";
     scissorsBtn.textContent = germanXml.querySelector('scissors').textContent;
     rockBtn.textContent = germanXml.querySelector('rock').textContent;
     paperBtn.textContent = germanXml.querySelector('paper').textContent;
-    rounds.textContent = germanXml.getAttribute('name');
-    // computerCounter.textContent = germanXml.querySelector('pc').textContent;
-    // playerCounter.textContent = germanXml.querySelector('player').textContent;
+    rounds.textContent = germanXml.querySelector('name').textContent;
+    computerCounter.textContent = germanXml.querySelector('pc').textContent;
+    playerCounter.textContent = germanXml.querySelector('player').textContent;
   }
 }
 

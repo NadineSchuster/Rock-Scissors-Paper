@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <languagesList>
     <english title="Rock, Scissors, Paper">
-        <rounds name="Rounds">
+        <rounds>
+            <name>Rounds</name>
             <pc>Computer</pc>
             <player>Player</player>
         </rounds>
@@ -22,7 +23,8 @@
     </english>
 
     <german title="Schere, Stein, Papier">
-        <rounds name="Runden">
+        <rounds>
+            <name>Runden</name>
             <pc>Computer</pc>
             <player>Spieler</player>
         </rounds>
