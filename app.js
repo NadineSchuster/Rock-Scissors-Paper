@@ -19,8 +19,10 @@ let xml;
 function checkLanguage(){
   console.log("Changed!");
   // languageSelection => value/index
-  console.log(languageSelection.value); // value = ger || eng
-  language = languageSelection.value;
+  console.log(languageSelection.value);
+  language = languageSelection.value; // value = ger || eng
+
+  selectLanguage();
 }
 
 languageSelection.addEventListener("click", checkLanguage);
@@ -176,6 +178,40 @@ function compareChoices(computerChoice, userChoice) {
 
     compuHand.src = "img/paper.png";
     playerWins.innerText++;
+  }
+}
+
+let selectLanguage = function(){
+  let header = document.querySelector('.header h1');
+  let announcement = document.querySelector('.winnerOutput');
+  let scissorsBtn = document.querySelector('#scissorsBtn h2');
+  let rockBtn = document.querySelector('#rockBtn h2');
+  let paperBtn = document.querySelector('#paperBtn h2');
+  let rounds = document.querySelector('.round-counter');
+  let computerCounter = document.querySelector('.counter-computer');
+  let playerCounter = document.querySelector('.counter-player');
+
+  let englishXml = xml.querySelector('english');
+  let germanXml = xml.querySelector('german');
+
+  if(language === "eng"){    
+    header.textContent = englishXml.getAttribute('title');
+    announcement.textContent = "Player vs Computer";
+    scissorsBtn.textContent = englishXml.querySelector('scissors').textContent;
+    rockBtn.textContent = englishXml.querySelector('rock').textContent;
+    paperBtn.textContent = englishXml.querySelector('paper').textContent;
+    rounds.textContent = englishXml.getAttribute('name');
+    // computerCounter.textContent = englishXml.querySelector('pc').textContent;
+    // playerCounter.textContent = englishXml.querySelector('player').textContent;
+  } else if (language === "ger"){
+    header.textContent = germanXml.getAttribute('title');
+    announcement.textContent = "Spieler vs Computer";
+    scissorsBtn.textContent = germanXml.querySelector('scissors').textContent;
+    rockBtn.textContent = germanXml.querySelector('rock').textContent;
+    paperBtn.textContent = germanXml.querySelector('paper').textContent;
+    rounds.textContent = germanXml.getAttribute('name');
+    // computerCounter.textContent = germanXml.querySelector('pc').textContent;
+    // playerCounter.textContent = germanXml.querySelector('player').textContent;
   }
 }
 
